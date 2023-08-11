@@ -12,13 +12,6 @@ pipeline
 		}
 		stage ("Test") 
 		{
-			when
-			{
-				expression
-				{
-					BRANCH_NAME == 'main'
-				}
-			}
 			steps 
 			{
 				echo 'Stage Test'
@@ -36,15 +29,15 @@ pipeline
 	{
 		always 
 		{
-			echo 'Post always'
+			echo 'Post Always'
 		}
 		success 
 		{
 			echo 'Post success'
 		}
-		failure
+		failures
 		{
-			echo 'Post failure'
+			echo 'Post failures'
 		}		
 	}
 }
