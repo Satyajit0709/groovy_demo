@@ -36,14 +36,14 @@ pipeline
 			steps 
 			{
 				echo 'Stage Deploy'
-				withCredentials
+			/*	withCredentials
 				([
 						usernamePassword(credentials: 'GIT-1' , usernameVariable: USER , passwordVariable: PWD)
 				])
 				{
 					echo "USer name is - ${USER}"
 					echo "USer name is - ${PWD}"
-				}
+				}  */
 			}
 		}
 	}
