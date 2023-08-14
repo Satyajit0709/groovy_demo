@@ -3,6 +3,7 @@ pipeline
 	agent any
 	parameters 
 	{
+		string(name: 'ENV_PARAM' , defaultValue: 'Dev' , description: 'String ENV variable')
 		choice(name: 'version_choice' , choices : ['1.0','2.0' ,'3.0'], description : 'Drop down') 
 		booleanParam (name: 'executeTests' , defaultValue: true)		
 	}
@@ -35,6 +36,7 @@ pipeline
 			{
 				echo 'Stage Deploy'
 				echo "Version is ${version_choice}"
+				echo "Parameter is ${ENV_PARAM}"
 			/*	withCredentials
 				([
 						usernamePassword(credentials: 'GIT-1' , usernameVariable: USER , passwordVariable: PWD)
