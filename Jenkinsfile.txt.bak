@@ -8,8 +8,8 @@ pipeline
 	}
 	parameters 
 	{
-		string(name : 'ENV_PARAM' , defaultValue= 'Dev' , description = 'String ENV variable')
-		choice(name : 'version_choice' , choices : ['1.0','2.0' ,'3.0'], description : 'Drop down') 
+		string(name: 'ENV_PARAM' , defaultValue: 'Dev' , description: 'String ENV variable')
+		choice(name: 'version_choice' , choices : ['1.0','2.0' ,'3.0'], description : 'Drop down') 
 		booleanParam (name: 'executeTests' , defaultValue : true)		
 	}
 	stages 
