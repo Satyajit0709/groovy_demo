@@ -13,4 +13,3 @@ def deployApp()
 	echo "Version is ${version_choice}"
 	echo "Parameter is ${ENV_PARAM}"
 }
-return this
