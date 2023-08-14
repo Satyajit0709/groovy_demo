@@ -28,6 +28,7 @@ pipeline
 			steps 
 			{
 				echo 'Stage Test'
+				echo "Variable Name - ${SERVER_CRED_PSW}"
 				echo "Variable Name - ${SERVER_CRED}"
 			}
 		}
