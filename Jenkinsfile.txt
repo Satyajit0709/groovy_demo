@@ -1,3 +1,4 @@
+def gv
 pipeline 
 {
 	agent any
@@ -9,11 +10,24 @@ pipeline
 	}
 	stages 
 	{
+		stage ("INIT")
+		{
+			steps
+			{
+				script
+				{			
+					gv = load "Ad_hoc_Script.groovy"
+				}
+			}
+		}
 		stage ("Build") 
 		{
 			steps 
 			{
-				echo 'Stage Build'
+				script
+				{
+					gv.buildApp()
+				}
 			}
 		}
 		stage ("Test") 
@@ -27,24 +41,20 @@ pipeline
 			}
 			steps 
 			{
-				echo 'Stage Test'
+				script
+				{
+					gv.testApp()
+				}
 			}
 		}
 		stage ("Deploy") 
 		{
 			steps 
 			{
-				echo 'Stage Deploy'
-				echo "Version is ${version_choice}"
-				echo "Parameter is ${ENV_PARAM}"
-			/*	withCredentials
-				([
-						usernamePassword(credentials: 'GIT-1' , usernameVariable: USER , passwordVariable: PWD)
-				])
+				script
 				{
-					echo "USer name is - ${USER}"
-					echo "USer name is - ${PWD}"
-				}  */
+					gv.deployApp()
+				}
 			}
 		}
 	}
