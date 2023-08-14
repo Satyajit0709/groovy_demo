@@ -21,15 +21,12 @@ pipeline
 			{
 				expression
 				{
-					param.executeTests == true
+					param.executeTests
 				}
 			}
 			steps 
 			{
 				echo 'Stage Test'
-				echo "Stements are executed because ${executeTests}  is True"
-			/*	echo "Variable Name - ${SERVER_CRED_PSW}"
-				echo "Variable Name - ${SERVER_CRED}"  */
 			}
 		}
 		stage ("Deploy") 
