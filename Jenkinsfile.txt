@@ -13,7 +13,6 @@ pipeline
 			steps 
 			{
 				echo 'Stage Build'
-				echo "Variable Name - ${VERSION_NAME}"
 			}
 		}
 		stage ("Test") 
@@ -22,13 +21,13 @@ pipeline
 			{
 				expression
 				{
-					param.booleanParam == true
+					param.executeTests == true
 				}
 			}
 			steps 
 			{
 				echo 'Stage Test'
-				echo "Stements are executed because ${booleanParam}  is True"
+				echo "Stements are executed because ${executeTests}  is True"
 			/*	echo "Variable Name - ${SERVER_CRED_PSW}"
 				echo "Variable Name - ${SERVER_CRED}"  */
 			}
