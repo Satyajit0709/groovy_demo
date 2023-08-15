@@ -1,4 +1,5 @@
 def gv
+
 pipeline 
 {
 	agent any
@@ -18,6 +19,13 @@ pipeline
 				{			
 					gv = load "Ad_hoc_Script.groovy"
 				}
+			}
+		}
+		stage ("Approval")
+		{
+			steps
+			{
+				input "provide the approval to proceed"
 			}
 		}
 		stage ("Build") 
